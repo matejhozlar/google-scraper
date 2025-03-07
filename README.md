@@ -34,9 +34,13 @@ Before running the project, ensure you have the following installed:
 3. **Set up your API key**:
    Replace 'YOUR-API-KEY' in index.js with your actual SERP API key or any key.
    You can get an API key by signing up at [SERP API](https://serpapi.com)
-4. **Run the server**:
+   ```js
+   20   const apiKey = 'YOUR-API-KEY'; // FILL IN YOUR API-KEY HERE
+   21   const apiUrl = `https://serpapi.com/search.json?q=${encodeURIComponent(keyword)}&api_key=${apiKey}`;
+   ```
+5. **Run the server**:
    node index.js
-5. **Access the application**:
+6. **Access the application**:
    Open your browser and navigate to http://localhost:5000
 
 ## Running Tests
