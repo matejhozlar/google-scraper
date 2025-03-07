@@ -45,9 +45,9 @@ Before running the project, ensure you have the following installed:
 
 ## Running Tests
 
-   **To run the tests, ensure you have Jest installed:**
+   **To run the tests, ensure you have Jest installed**:
    npm install jest supertest --save-dev
-   **Then, run the tests using:**
+   **Then, run the tests using**:
    npx jest
 
   ## How It Works
