@@ -13,7 +13,7 @@ The project consists of the following files:
 ## Features
 
 - Users can enter a keyword in the input field and click the "Search" button.
-- The backend fetches search results from the SERP API.
+- The backend fetches search results from the [SERP API](https://serpapi.com).
 - Results are displayed in the console and can be downloaded as a JSON file.
 
 ## Prerequisites
