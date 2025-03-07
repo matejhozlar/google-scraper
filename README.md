@@ -74,3 +74,10 @@ Here’s an example of the JSON response returned by the SERP API:
     }
   ]
 }
+```
+## Acknowledgments
+- [SERP API](https://serpapi.com) for providing the search results API.
+- [Express.js](https://expressjs.com) for the backend server.
+- [Jest](https://jestjs.io) and [Supertest](https://github.com/ladjs/supertest) for testing.
+## License
+MIT
