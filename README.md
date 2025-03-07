@@ -53,9 +53,10 @@ Before running the project, ensure you have the following installed:
       ```bash
       npm install jest supertest --save-dev<br>
       ```
+      <br>
    **Then, run the tests using**:<br>
       ```bash
-      npx jest<br>
+      npx jest
       ```
 
   ## How It Works
