@@ -7,7 +7,7 @@ This project is a simple web application that allows users to search for a keywo
 The project consists of the following files:
 
 - **`index.html`**: The main HTML file that contains the user interface for entering a keyword and triggering the search.
-- **`index.js`**: The backend server built with Express.js that handles the search request and fetches results from the SERP API.
+- **`index.js`**: The backend server built with Express.js that handles the search request and fetches results from the [SERP API](https://serpapi.com).
 - **`server.test.js`**: Test cases for the backend server using Jest and Supertest.
 
 ## Features
