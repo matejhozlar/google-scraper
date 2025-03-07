@@ -30,8 +30,10 @@ Before running the project, ensure you have the following installed:
    git clone https://github.com/your-username/your-repo-name.git
    cd your-repo-name
 2. **Install dependencies**:
+   ```bash
    npm install express axios
-3. **Set up your API key**:
+   ```
+4. **Set up your API key**:
    Replace 'YOUR-API-KEY' in index.js with your actual SERP API key or any key.
    You can get an API key by signing up at [SERP API](https://serpapi.com)
    ```js
@@ -39,16 +41,22 @@ Before running the project, ensure you have the following installed:
    21   const apiUrl = `https://serpapi.com/search.json?q=${encodeURIComponent(keyword)}&api_key=${apiKey}`;
    ```
 5. **Run the server**:
+   ```bash
    node index.js
-6. **Access the application**:
-   Open your browser and navigate to http://localhost:5000
+   ```
+7. **Access the application**:
+   Open your browser and navigate to [http://localhost:5000](http://localhost:5000)
 
 ## Running Tests
 
    **To run the tests, ensure you have Jest installed**:<br>
+      ```bash
       npm install jest supertest --save-dev<br>
+      ```
    **Then, run the tests using**:<br>
+      ```bash
       npx jest<br>
+      ```
 
   ## How It Works
   1. The user enters a keword in the input field and clicks the "Search" button.
