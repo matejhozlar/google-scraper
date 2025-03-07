@@ -62,13 +62,13 @@ Before running the project, ensure you have the following installed:
   ## How It Works
   1. The user enters a keword in the input field and clicks the "Search" button.
   2. The frontend sends a POST request to the **/fetch-results** endpoint with the keyword.
-  3. The backend fetches results from the SERP API using the provided keyword.
+  3. The backend fetches results from the [SERP API](https://serpapi.com) using the provided keyword.
   4. The results are processed and sent back to the frontend.
   5. The frontend allows the user to download the results as a JSON file.
 
 
 ### Rendered Output
-Here’s an example of the JSON response returned by the SERP API:
+Here’s an example of the JSON response returned by the [SERP API](https://serpapi.com):
 
 ```json
 {
