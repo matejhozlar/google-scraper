@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task</title>
+</head>
+<style>
+
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+</style>
+<body>
+    <input type="text" id="keyword" placeholder="Type a keyword" />
+    <button id="search">Search</button>
+</body>
+<script>
+
+    document.getElementById("search").addEventListener("click", async () => {
+        const keyword = document.getElementById("keyword").value;
+        if(!keyword){
+            alert("Please enter a keyword");
+            return;
+        }
+
+        const response = await fetch("./fetch-results", {
+            method: 'POST',
+            headers: {
+                'Content-Type' : 'application/json',
+            },
+            body : JSON.stringify({ keyword }),
+        });
+        const data = await response.json();
+        if(data.error){
+            alert(data.error);
+        }
+        else {
+            const blob = new Blob([JSON.stringify(data.results, null, 2)], { type: 'application/json'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'search_results.json';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+    });
+
+</script>
+</html>
