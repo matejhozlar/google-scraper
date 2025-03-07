@@ -51,7 +51,7 @@ Before running the project, ensure you have the following installed:
 
    **To run the tests, ensure you have Jest installed**:<br>
       ```bash
-      npm install jest supertest --save-dev<br>
+      npm install jest supertest --save-dev
       ```
       <br>
    **Then, run the tests using**:<br>
