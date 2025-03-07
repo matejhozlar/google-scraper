@@ -46,9 +46,9 @@ Before running the project, ensure you have the following installed:
 ## Running Tests
 
    **To run the tests, ensure you have Jest installed**:
-   npm install jest supertest --save-dev
+      npm install jest supertest --save-dev
    **Then, run the tests using**:
-   npx jest
+      npx jest
 
   ## How It Works
   1. The user enters a keword in the input field and clicks the "Search" button.
