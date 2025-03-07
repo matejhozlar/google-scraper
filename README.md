@@ -1,7 +1,5 @@
 # Google-scraper
 
-# Search Results Fetcher
-
 This project is a simple web application that allows users to search for a keyword and fetch results from an external API (SERP API). The results are then downloaded as a JSON file.
 
 ## Project Structure
