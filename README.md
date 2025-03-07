@@ -1,6 +1,6 @@
 # Google-scraper
 
-This project is a simple web application that allows users to search for a keyword and fetch results from an external API (SERP API). The results are then downloaded as a JSON file.
+This project is a simple web application that allows users to search for a keyword and fetch results from an external API ([SERP API](https://serpapi.com)). The results are then downloaded as a JSON file.
 
 ## Project Structure
 
