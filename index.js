@@ -17,7 +17,7 @@ app.post('/fetch-results', async (req, res) => {
     }
 
     try {
-        const apiKey = 'YOUR-API-KEY'; // FILL IN YOUR API-KEY HERE
+        const apiKey = 'YOUR-API-KEY'; // FILL IN YOUR API-KEY
         const apiUrl = `https://serpapi.com/search.json?q=${encodeURIComponent(keyword)}&api_key=${apiKey}`;
 
         const response = await axios.get(apiUrl);
