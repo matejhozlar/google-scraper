@@ -97,7 +97,7 @@ testing.
 This project uses SerpApi (or another legal API) to fetch Google search results in compliance with their terms of service. However, scraping Google directly without permission is against Google's Terms of Service (Google ToS).
 
 Important Notes:
-- This project is intended for personal and educational use only.
+- This project is intended for educational use only.
 - Do not use this project to scrape Google directly or violate any website’s terms of service.
 - If you use an API like SerpApi, make sure to follow their terms and conditions.
 - Do not expose your API keys in public repositories. Use environment variables (.env) to keep them secure.
