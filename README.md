@@ -27,7 +27,7 @@ Before running the project, ensure you have the following installed:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
+   git clone https://github.com/matejhozlar/google-scraper.git
    cd your-repo-name
 2. **Install dependencies**:
    ```bash
@@ -89,6 +89,20 @@ Here’s an example of the JSON response returned by the [SERP API](https://serp
 ## Acknowledgments
 - [SERP API](https://serpapi.com) for providing the search results API.
 - [Express.js](https://expressjs.com) for the backend server.
-- [Jest](https://jestjs.io) and [Supertest](https://github.com/ladjs/supertest) for testing.
+- [Jest](https://jestjs.io) and [Supertest](https://github.com/ladjs/supertest) for
+testing.
+
+## ⚠️ Disclaimer & Legal Warning
+
+This project uses SerpApi (or another legal API) to fetch Google search results in compliance with their terms of service. However, scraping Google directly without permission is against Google's Terms of Service (Google ToS).
+
+Important Notes:
+- This project is intended for educational use only.
+- Do not use this project to scrape Google directly or violate any website’s terms of service.
+- If you use an API like SerpApi, make sure to follow their terms and conditions.
+- Do not expose your API keys in public repositories. Use environment variables (.env) to keep them secure.
+- If you plan to use this project commercially or at scale, consult a legal expert to ensure compliance with relevant laws and policies.
+- By using this project, you agree that you are responsible for any actions taken with this code and that the creator assumes no liability for misuse.
+
 ## License
 MIT
