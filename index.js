@@ -1,7 +1,15 @@
-const express = require('express');
-const axios = require('axios');
+import express from "express";
+import axios from "axios";
+import env from "dotenv";
+import { dirname } from "path";
+import { fileURLToPath } from "url";
+const __dirname = dirname(fileURLToPath(import.meta.url));
+env.config();
 const app = express();
 const port = 5000;
+
+
+
 
 app.use(express.json());
 
@@ -17,7 +25,7 @@ app.post('/fetch-results', async (req, res) => {
     }
 
     try {
-        const apiKey = 'YOUR-API-KEY'; // FILL IN YOUR API-KEY
+        const apiKey = process.env.API_KEY; // FILL IN YOUR API-KEY
         const apiUrl = `https://serpapi.com/search.json?q=${encodeURIComponent(keyword)}&api_key=${apiKey}`;
 
         const response = await axios.get(apiUrl);
