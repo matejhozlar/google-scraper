@@ -152,7 +152,3 @@ Important Notes:
 - Do not expose your API keys in public repositories. Use environment variables (.env) to keep them secure.
 - If you plan to use this project commercially or at scale, consult a legal expert to ensure compliance with relevant laws and policies.
 - By using this project, you agree that you are responsible for any actions taken with this code and that the creator assumes no liability for misuse.
-
-## License
-
-MIT
