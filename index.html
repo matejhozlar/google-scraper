@@ -10,48 +10,51 @@
     <div class="container">
       <h1 class="title">Google Scraper</h1>
 
-      <form class="form" onsubmit="return false;">
+      <form class="form" onsubmit="return false;" aria-label="Search form">
+        <label class="sr-only" for="keyword">Keyword</label>
         <input
           type="text"
           id="keyword"
           name="userInput"
           placeholder="Type something..."
+          autocomplete="off"
+          aria-required="true"
         />
-        <button id="search" type="button">Submit</button>
+        <button id="search" type="button" aria-label="Search">Submit</button>
       </form>
+
+      <section id="results-section" class="results hidden" aria-live="polite">
+        <div class="results-toolbar">
+          <div class="results-meta">
+            <span id="result-count">0</span> results
+          </div>
+          <div class="results-actions">
+            <button id="download-json" class="btn ghost" disabled>
+              Download JSON
+            </button>
+          </div>
+        </div>
+
+        <div id="results-grid" class="results-grid" role="list"></div>
+
+        <div id="empty-state" class="empty-state hidden">
+          <p>No results yet. Try a search above.</p>
+        </div>
+      </section>
+
+      <div
+        id="loading"
+        class="loading hidden"
+        role="status"
+        aria-live="assertive"
+      >
+        <span class="spinner" aria-hidden="true"></span>
+        <span>Fetching results…</span>
+      </div>
+      <div id="error" class="error hidden" role="alert"></div>
     </div>
 
     <footer>&copy; 2025 Matej Hozlár</footer>
-
-    <script>
-      document.getElementById("search").addEventListener("click", async () => {
-        const keyword = document.getElementById("keyword").value;
-        if (!keyword) {
-          alert("Please enter a keyword");
-          return;
-        }
-
-        const response = await fetch("./fetch-results", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ keyword }),
-        });
-
-        const data = await response.json();
-        if (data.error) {
-          alert(data.error);
-        } else {
-          const blob = new Blob([JSON.stringify(data.results, null, 2)], {
-            type: "application/json",
-          });
-          const url = URL.createObjectURL(blob);
-          const a = document.createElement("a");
-          a.href = url;
-          a.download = "search_results.json";
-          a.click();
-          URL.revokeObjectURL(url);
-        }
-      });
-    </script>
+    <script type="module" src="./scripts/search.js"></script>
   </body>
 </html>

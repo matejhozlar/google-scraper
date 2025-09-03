@@ -29,45 +29,91 @@ Before running the project, ensure you have the following installed:
    ```bash
    git clone https://github.com/matejhozlar/google-scraper.git
    cd your-repo-name
+   ```
 2. **Install dependencies**:
    ```bash
    npm install express axios
    ```
-4. **Set up your API key**:
+3. **Set up your API key**:
    Replace 'YOUR-API-KEY' in index.js with your actual SERP API key or any key.
    You can get an API key by signing up at [SERP API](https://serpapi.com)
    ```js
    20   const apiKey = 'YOUR-API-KEY'; // FILL IN YOUR API-KEY HERE
    21   const apiUrl = `https://serpapi.com/search.json?q=${encodeURIComponent(keyword)}&api_key=${apiKey}`;
    ```
-5. **Run the server**:
+4. **Run the server**:
    ```bash
    node index.js
    ```
-7. **Access the application**:
+5. **Access the application**:
    Open your browser and navigate to [http://localhost:5000](http://localhost:5000)
+
+## Docker Setup
+
+You can also build and run this project inside docker
+
+1. **Build the Docker image**
+   ```bash
+   docker build -t google-scraper .
+   ```
+2. **Run the container**
+   ```bash
+   docker run --rm -p 3000:3000 \
+      -e PORT=3000 \
+      -e API_KEY=your_serpapi_key_here \
+      -e NODE_ENV=production \
+      google-scraper
+   ```
+   - `-p 3000:3000` → Maps container port to 3000 to your local machine.
+   - `-e PORT=3000` → Defines which port Express should listen on.
+   - `-e API_KEY=...` → Supplies your SerpApi key.
+   - `-e NODE_ENV=production` → Runs node in production mode
+     Then open http://localhost:3000 or http://127.0.0.1:5000
+3. **Environment variable overrides**
+   You can override environment variables at runtime. For example:
+
+   ```bash
+      # Run on a different port
+      docker run --rm -p 3000:3000 \
+         -e PORT=3000 \
+         -e API_KEY=your_serpapi_key_here \
+         -e NODE_ENV=production \
+         google-scraper
+   ```
+
+   Or use a .env file:
+
+   ```bash
+   # .env
+   PORT=3000
+   API_KEY=your_serpapi_key_here
+   NODE_ENV=production
+   ```
+
+   Run with:
+
+   ```bash
+   docker run --rm -p 3000:3000 --env-file .env google-scraper
+   ```
 
 ## Running Tests
 
-   **To run the tests, ensure you have Jest installed**:<br>
-      ```
-      npm install jest supertest --save-dev
-      ```
-      <br>
-   **Then, run the tests using**:<br>
-      ```
-      npx jest
-      ```
+**To run the tests, ensure you have Jest installed**:<br>
+`npm install jest supertest --save-dev`
+<br>
+**Then, run the tests using**:<br>
+`npx jest`
 
-  ## How It Works
-  1. The user enters a keword in the input field and clicks the "Search" button.
-  2. The frontend sends a POST request to the **/fetch-results** endpoint with the keyword.
-  3. The backend fetches results from the [SERP API](https://serpapi.com) using the provided keyword.
-  4. The results are processed and sent back to the frontend.
-  5. The frontend allows the user to download the results as a JSON file.
+## How It Works
 
+1. The user enters a keword in the input field and clicks the "Search" button.
+2. The frontend sends a POST request to the **/fetch-results** endpoint with the keyword.
+3. The backend fetches results from the [SERP API](https://serpapi.com) using the provided keyword.
+4. The results are processed and sent back to the frontend.
+5. The frontend allows the user to download the results as a JSON file.
 
 ### Rendered Output
+
 Here’s an example of the JSON response returned by the [SERP API](https://serpapi.com):
 
 ```json
@@ -86,17 +132,20 @@ Here’s an example of the JSON response returned by the [SERP API](https://serp
   ]
 }
 ```
+
 ## Acknowledgments
+
 - [SERP API](https://serpapi.com) for providing the search results API.
 - [Express.js](https://expressjs.com) for the backend server.
 - [Jest](https://jestjs.io) and [Supertest](https://github.com/ladjs/supertest) for
-testing.
+  testing.
 
 ## ⚠️ Disclaimer & Legal Warning
 
 This project uses SerpApi (or another legal API) to fetch Google search results in compliance with their terms of service. However, scraping Google directly without permission is against Google's Terms of Service (Google ToS).
 
 Important Notes:
+
 - This project is intended for educational use only.
 - Do not use this project to scrape Google directly or violate any website’s terms of service.
 - If you use an API like SerpApi, make sure to follow their terms and conditions.
@@ -105,4 +154,5 @@ Important Notes:
 - By using this project, you agree that you are responsible for any actions taken with this code and that the creator assumes no liability for misuse.
 
 ## License
+
 MIT

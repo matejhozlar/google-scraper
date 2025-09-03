@@ -25,6 +25,10 @@ app.post("/fetch-results", async (req, res) => {
 
   try {
     const apiKey = process.env.API_KEY;
+    if (!apiKey) {
+      console.log("Please provide an API key to .env");
+      process.exit(1);
+    }
     const apiUrl = `https://serpapi.com/search.json?q=${encodeURIComponent(
       keyword
     )}&api_key=${apiKey}`;
