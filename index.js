@@ -1,12 +1,14 @@
 import express from "express";
 import axios from "axios";
 import env from "dotenv";
-import { dirname } from "path";
+import path from "path";
 import { fileURLToPath } from "url";
-const __dirname = dirname(fileURLToPath(import.meta.url));
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 env.config();
 const app = express();
 const port = process.env.PORT;
+
+app.use(express.static(path.join(__dirname, "public")));
 
 app.use(express.json());
 
